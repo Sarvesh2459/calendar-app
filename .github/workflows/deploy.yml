@@ -21,6 +21,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install and build
         run: |
+          cd calendar
           npm install
           npm run build
           cp ./build/index.html ./build/404.html
@@ -30,6 +31,6 @@ jobs:
         uses: crazy-max/ghaction-github-pages@v1
         with:
           target_branch: gh-pages
-          build_dir: build
+          build_dir: calendar/build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
