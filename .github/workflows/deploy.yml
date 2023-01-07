@@ -21,8 +21,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install and build
         run: |
-          cd calendar
-          npm install
+          cd calendar && npm install
           npm run build
           cp ./build/index.html ./build/404.html
           echo > ./build/.nojekyll
